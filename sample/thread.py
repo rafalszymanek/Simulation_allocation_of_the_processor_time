@@ -7,14 +7,15 @@ class Thread:
     def __init__(self, allocationOfProcessorTime):
         self.allocationOfProcessorTime = allocationOfProcessorTime
 
+    def executeProcess(self):
+        self.processingTime += self.allocationOfProcessorTime
+        self.didFinished = True
+
     def endingPreviousProcess(self, durationOfEndingProcess):
         self.waitingTime += durationOfEndingProcess
         self.processingTime += durationOfEndingProcess
 
-    def executeProcess(self):
-        self.waitingTime += self.allocationOfProcessorTime
-        self.processingTime += self.allocationOfProcessorTime
-        didFinished = True
-
-    def putResultsToTable(self, resultArray = [], *args):
-        resultArray.append('50')
+    def putResultsToTable(self, listOfWaitingTime = [], listOfProcessingTime = [], *args):
+        listOfWaitingTime.append(self.waitingTime)
+        listOfProcessingTime.append(self.processingTime)
+        return listOfWaitingTime, listOfProcessingTime

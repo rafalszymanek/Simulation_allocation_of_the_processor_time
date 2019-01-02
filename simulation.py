@@ -1,11 +1,13 @@
 from sample.thread import Thread
+from sample.fcsfalgorythm import *
 
 
 
 if __name__ == "__main__":
-    array = [1, 2, 3, 4, 5, 6, 7]
-    p1 = Thread(50)
-    print (p1.waitingTime)
-    p1.putResultsToTable(array)
+    listOfWaitingTime = []
+    listOfProcessingTime = []
+    listOfThread = [11, 56, 2, 9, 99, 12, 34, 22, 85, 53]
+    listOfWaitingTime, listOfProcessingTime = fcfs(listOfThread)
 
-    print (array[len(array)-1])
+    print (listOfWaitingTime)
+    print (listOfProcessingTime)
