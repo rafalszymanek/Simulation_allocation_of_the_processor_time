@@ -1,12 +1,18 @@
 from sample.fcsfalgorythm import *
+from sample.open_data import *
 
 
 
 if __name__ == "__main__":
     global listOfWaitingTime
     global listOfProcessingTime
-    listOfThread = [11, 56, 2, 9, 99, 12, 34, 22, 85, 53]
-    fcfs(listOfThread)
 
-    print (listOfWaitingTime)
-    print (listOfProcessingTime)
+    matrix = openFileAndPutIntoMatrix()
+
+
+    for i in range(0, len(matrix)):
+        listOfThread = matrix[i]
+        fcfs(listOfThread)
+
+
+    print (listOfProcessingTime[1])

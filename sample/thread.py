@@ -15,7 +15,7 @@ class Thread:
         self.waitingTime += durationOfEndingProcess
         self.processingTime += durationOfEndingProcess
 
-    def putResultsToTable(self, listOfWaitingTime = [], listOfProcessingTime = [], *args): 
-        listOfWaitingTime.append(self.waitingTime)
-        listOfProcessingTime.append(self.processingTime)
+    def putResultsToTable(self, listOfWaitingTime = [], listOfProcessingTime = [], *args):
+        listOfWaitingTime = self.waitingTime
+        listOfProcessingTime = self.processingTime
         return listOfWaitingTime, listOfProcessingTime
