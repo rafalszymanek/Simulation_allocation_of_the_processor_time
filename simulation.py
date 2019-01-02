@@ -9,7 +9,6 @@ if __name__ == "__main__":
 
     matrix = openFileAndPutIntoMatrix()
 
-
     for i in range(0, len(matrix)):
         listOfThread = matrix[i]
         fcfs(listOfThread)
