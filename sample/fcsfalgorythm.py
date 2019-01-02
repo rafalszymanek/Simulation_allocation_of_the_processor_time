@@ -2,27 +2,28 @@ from sample.thread import Thread
 
 listOfWaitingTime = []
 listOfProcessingTime = []
+listOfThread = []
 
 def fcfs(listOfThreadNotClass = [], *args):
     global listOfWaitingTime
     global listOfProcessingTime
+    global listOfThread
+    createArrayOfTheads(listOfThreadNotClass)
 
-    listOfThread = createArrayOfTheads(listOfThreadNotClass)
-
-    fscsExecution(listOfThread)
+    fscsExecution()
 
 
 def createArrayOfTheads(listOfThreadNotClass):
-    listOfThread = []
+    global listOfThread
     for x in listOfThreadNotClass:
         listOfThread.append(Thread(x))
 
-    return listOfThread
 
-def fscsExecution(listOfThread = [], *args):
+def fscsExecution():
     i = 0
     global listOfWaitingTime
     global listOfProcessingTime
+    global listOfThread
 
     for actualExecThread in listOfThread:
         i += 1
