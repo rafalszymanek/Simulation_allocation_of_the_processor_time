@@ -20,14 +20,14 @@ def createArrayOfTheads(listOfThreadNotClass):
 
 
 def fscsExecution():
-    i = 0
+    i = 0   # next thread
     global listOfWaitingTime
     global listOfProcessingTime
     global listOfThread
 
-    for actualExecThread in listOfThread:
+    for actualExecThread in listOfThread:   # ececute process though FCFS queue
         i += 1
         actualExecThread.executeProcess()
         listOfWaitingTime, listOfProcessingTime = actualExecThread.putResultsToTable(listOfWaitingTime, listOfProcessingTime)
-        for j in range(i,len(listOfThread)):
+        for j in range(i,len(listOfThread)):    # add allocationOfProcessorTime to waitingTime and processingTime to other threads in queue
             listOfThread[j].endingPreviousProcess(actualExecThread.allocationOfProcessorTime)

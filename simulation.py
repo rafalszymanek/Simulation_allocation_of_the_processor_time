@@ -1,4 +1,3 @@
-from sample.thread import Thread
 from sample.fcsfalgorythm import *
 
 
