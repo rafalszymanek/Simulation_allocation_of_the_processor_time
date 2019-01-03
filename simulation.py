@@ -19,3 +19,6 @@ if __name__ == "__main__":
 
     listMedianOfEachAttemptOfWaitingTime = medianOfArray(listOfWaitingTime)
     medianOfAllAttemptOfWaitingTime = medianOfArray(listMedianOfEachAttemptOfWaitingTime)
+
+    print("Median = "+ str(medianOfAllAttemptOfWaitingTime) + " [ms]")
+    print("Mean = " + str(averageOfAllAttemptOfWaitingTime) + " [ms]")

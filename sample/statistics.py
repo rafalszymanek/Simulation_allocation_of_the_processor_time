@@ -14,22 +14,13 @@ def averageOfArray(array):
 
 def averageForList2D(array):
     averageResult = []
-    sumOfRow = 0
     for i in range(0, len(array)):
-        sumOfRow = 0
-        for row in array [i]:
-            sumOfRow += row
-        averageResult.append(sumOfRow/len(array[i]))
+        averageResult.append(statistics.mean(array[i]))
     return averageResult
 
 
 def averageForList1D(array):
-    averageResult = 0
-    sumOfRow = 0
-    for item in array:
-        sumOfRow += item
-    averageResult = sumOfRow/len(array)
-    return averageResult
+    return statistics.mean(array)
 
 
 
@@ -54,4 +45,4 @@ def medianForList2D(array):
     return medianResult
 
 def medianForList1D(array):
-    return tatistics.median(array)
+    return statistics.median(array)
