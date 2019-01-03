@@ -1,6 +1,8 @@
-from simulation import path
+#from simulation import path
 from sample.process import Process
 from sample.open_data import checkWidthAndHeightOfFile
+
+path = "data/test_values.txt"
 
 width, height = checkWidthAndHeightOfFile(path)
 #Create 2D List with zeros
@@ -10,24 +12,25 @@ listOfAllProcessingTime = [[0 for x in range(width)] for y in range(height)]
 listOfProcess = []
 actualAttempt = 0
 
-def fcfs(matrix):
+def sjf(matrix):
     global listOfAllWaitingTime
     global listOfAllProcessingTime
     global listOfProcess
 
     for i in range(0, len(matrix)):
-        fcfsProcess(matrix[i])
+        sjfProcess(matrix[i])
     return listOfAllWaitingTime, listOfAllProcessingTime
 
 
-def fcfsProcess(listOfProcessNotClass = [], *args):
+def sjfProcess(listOfProcessNotClass = [], *args):
     global listOfAllWaitingTime
     global listOfAllProcessingTime
     global listOfProcess
 
+    listOfProcessNotClass.sort()
     #put classes of process to ListOfProcess
     createArrayOfProcesses(listOfProcessNotClass)
-    fscsExecution()
+    sjfExecution()
 
 
 def createArrayOfProcesses(listOfProcessNotClass):
@@ -37,7 +40,7 @@ def createArrayOfProcesses(listOfProcessNotClass):
     for x in listOfProcessNotClass:
         listOfProcess.append(Process(x))
 
-def fscsExecution():
+def sjfExecution():
     global listOfAllWaitingTime
     global listOfAllProcessingTime
     global listOfProcess
