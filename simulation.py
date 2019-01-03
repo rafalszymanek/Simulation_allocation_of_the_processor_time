@@ -1,5 +1,6 @@
 from sample.fcsfalgorythm import *
 from sample.open_data import *
+from sample.statistics import *
 
 
 
@@ -13,5 +14,8 @@ if __name__ == "__main__":
         listOfThread = matrix[i]
         fcfs(listOfThread)
 
+    listAverageOfEachAttemptOfWaitingTime = averageOfArray(listOfWaitingTime)
+    averageOfAllAttemptOfWaitingTime = averageOfArray(listAverageOfEachAttemptOfWaitingTime)
 
-    print (listOfProcessingTime[1])
+    listMedianOfEachAttemptOfWaitingTime = medianOfArray(listOfWaitingTime)
+    medianOfAllAttemptOfWaitingTime = medianOfArray(listMedianOfEachAttemptOfWaitingTime)
