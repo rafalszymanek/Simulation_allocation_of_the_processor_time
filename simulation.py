@@ -2,10 +2,7 @@ from sample.fcsfalgorythm import *
 from sample.sjfalgorythm import *
 from sample.open_data import *
 from sample.statistics import *
-
-
-path = "data/test_values.txt"
-
+from sample.globals import path
 
 if __name__ == "__main__":
     #Matrix is a 2D list

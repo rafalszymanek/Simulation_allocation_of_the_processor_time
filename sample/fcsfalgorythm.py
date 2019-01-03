@@ -1,4 +1,4 @@
-from simulation import path
+from sample.globals import path
 from sample.process import Process
 from sample.open_data import checkWidthAndHeightOfFile
 from sample.doalgorythm import *

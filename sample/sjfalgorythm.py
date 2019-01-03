@@ -1,9 +1,7 @@
-#from simulation import path
+from sample.globals import path
 from sample.process import Process
 from sample.open_data import checkWidthAndHeightOfFile
 from sample.doalgorythm import *
-
-path = "data/test_values.txt"
 
 width, height = checkWidthAndHeightOfFile(path)
 #Create 2D List with zeros
