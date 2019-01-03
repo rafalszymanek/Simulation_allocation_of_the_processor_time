@@ -15,7 +15,7 @@ if __name__ == "__main__":
     listOfAllWaitingTime, listOfAllProcessingTime = fcfs(matrix)
 
     # Waiting Time Statistic Stuff
-    averageValue, medianValue = test(listOfAllWaitingTime)
+    averageValue, medianValue = arytythmeticStuff(listOfAllWaitingTime)
 
     # Interface
     print("\n---------------------\n\tFCFS\n---------------------")
@@ -24,7 +24,7 @@ if __name__ == "__main__":
     print("Mean = " + str(averageValue) + " [ms]")
 
     # Processing Time Statistic Stuff
-    averageValue, medianValue = test(listOfAllProcessingTime)
+    averageValue, medianValue = arytythmeticStuff(listOfAllProcessingTime)
 
     print("\nProcessing time: ")
     print("Median = "+ str(medianValue) + " [ms]")
@@ -36,7 +36,7 @@ if __name__ == "__main__":
     listOfAllWaitingTime, listOfAllProcessingTime = sjf(matrix)
 
     # Waiting Time Statistic Stuff
-    averageValue, medianValue = test(listOfAllWaitingTime)
+    averageValue, medianValue = arytythmeticStuff(listOfAllWaitingTime)
 
     # Interface
     print("\n---------------------\n\tSJF\n---------------------")
@@ -45,7 +45,7 @@ if __name__ == "__main__":
     print("Mean = " + str(averageValue) + " [ms]")
 
     # Processing Time Statistic Stuff
-    averageValue, medianValue = test(listOfAllProcessingTime)
+    averageValue, medianValue = arytythmeticStuff(listOfAllProcessingTime)
 
     # Interface
     print("\nProcessing time: ")
