@@ -1,13 +1,29 @@
-def openFileAndPutIntoMatrix():
-    fileWithData = open("data/test_values.txt", "r")
-    w, h = 100, 100;
-    matrix = [[0 for x in range(w)] for y in range(h)]
+
+
+def openFileAndPutIntoMatrix(path):
+    width, height = checkWidthAndHeightOfFile(path)
+    matrix = [[0 for x in range(width)] for y in range(height)]
+    fileWithData = open(path, "r")
 
     actualAttempt = 0
     for line in fileWithData:
         ourList = (list(map(int, line.split())))
-        for j in range(0,100):
+        for j in range(0,width):
             matrix[actualAttempt][j] = ourList[j]
         actualAttempt+=1
 
+    fileWithData.close()
     return matrix
+
+def checkWidthAndHeightOfFile(path):
+    fileWithData = open(path, "r")
+    width = 0
+    height = 0
+
+    for line in fileWithData:
+        ourList = (list(map(int, line.split())))
+        height += 1
+        width = len(ourList)
+
+    fileWithData.close()
+    return width, height

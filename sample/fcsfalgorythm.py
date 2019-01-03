@@ -1,9 +1,12 @@
+from simulation import path
 from sample.process import Process
+from sample.open_data import checkWidthAndHeightOfFile
 
-w, h = 100, 100;
+width, height = checkWidthAndHeightOfFile(path)
 #Create 2D List with zeros
-listOfAllWaitingTime = [[0 for x in range(w)] for y in range(h)]
-listOfAllProcessingTime = [[0 for x in range(w)] for y in range(h)]
+listOfAllWaitingTime = [[0 for x in range(width)] for y in range(height)]
+listOfAllProcessingTime = [[0 for x in range(width)] for y in range(height)]
+
 listOfProcess = []
 actualAttempt = 0
 
@@ -12,6 +15,7 @@ def fcfs(listOfProcessNotClass = [], *args):
     global listOfAllProcessingTime
     global listOfProcess
 
+    #put classes of process to ListOfProcess
     createArrayOfProcesses(listOfProcessNotClass)
     fscsExecution()
 
