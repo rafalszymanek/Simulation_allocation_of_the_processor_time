@@ -1,38 +1,44 @@
-from sample.thread import Thread
+from sample.process import Process
 
 w, h = 100, 100;
-listOfWaitingTime = [[0 for x in range(w)] for y in range(h)]
-listOfProcessingTime = [[0 for x in range(w)] for y in range(h)]
-listOfThread = []
+#Create 2D List with zeros
+listOfAllWaitingTime = [[0 for x in range(w)] for y in range(h)]
+listOfAllProcessingTime = [[0 for x in range(w)] for y in range(h)]
+listOfProcess = []
 actualAttempt = 0
 
-def fcfs(listOfThreadNotClass = [], *args):
-    global listOfWaitingTime
-    global listOfProcessingTime
-    global listOfThread
-    createArrayOfTheads(listOfThreadNotClass)
+def fcfs(listOfProcessNotClass = [], *args):
+    global listOfAllWaitingTime
+    global listOfAllProcessingTime
+    global listOfProcess
+
+    createArrayOfProcesses(listOfProcessNotClass)
     fscsExecution()
 
 
-def createArrayOfTheads(listOfThreadNotClass):
-    global listOfThread
-    listOfThread = []
-    for x in listOfThreadNotClass:
-        listOfThread.append(Thread(x))
+def createArrayOfProcesses(listOfProcessNotClass):
+    global listOfProcess
+    listOfProcess = []
+
+    for x in listOfProcessNotClass:
+        listOfProcess.append(Process(x))
 
 
 def fscsExecution():
-    i = 0   # next thread
-    global listOfWaitingTime
-    global listOfProcessingTime
-    global listOfThread
+    global listOfAllWaitingTime
+    global listOfAllProcessingTime
+    global listOfProcess
     global actualAttempt
+    i = 0   # index of next Process
 
-    for actualExecThread in listOfThread:   # ececute process though FCFS queue
-        actualExecThread.executeProcess()
-        # print (len(listOfThread))
-        listOfWaitingTime[actualAttempt][i], listOfProcessingTime[actualAttempt][i] = actualExecThread.putResultsToTable(listOfWaitingTime, listOfProcessingTime)
+    for actualExecProcess in listOfProcess:   # ececute process though FCFS queue
+        actualExecProcess.executeProcess()
+        listOfAllWaitingTime[actualAttempt][i], listOfAllProcessingTime[actualAttempt][i] = actualExecProcess.putResultsToTable(listOfAllWaitingTime, listOfAllProcessingTime)
+
+        # Do for other process then actual
         i += 1
-        for j in range(i,len(listOfThread)):    # add allocationOfProcessorTime to waitingTime and processingTime to other threads in queue
-            listOfThread[j].endingPreviousProcess(actualExecThread.allocationOfProcessorTime)
+        # Add allocationOfProcessorTime to waitingTime and processingTime to other Processs in queue
+        for j in range(i,len(listOfProcess)):
+            listOfProcess[j].endingPreviousProcess(actualExecProcess.allocationOfProcessorTime)
+
     actualAttempt += 1

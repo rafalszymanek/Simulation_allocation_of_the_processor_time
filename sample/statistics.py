@@ -1,16 +1,13 @@
 from sample.fcsfalgorythm import *
 import statistics
 
+
+#AVERAGE MEAN
 def averageOfArray(array):
-
-    if isinstance(array[0], list):
-        result = []
-        result = averageForList2D(array)
+    if isinstance(array[0], list): # Check that
+        return averageForList2D(array)
     else:
-        result = 0
-        result = averageForList1D(array)
-    return result
-
+        return averageForList1D(array)
 
 def averageForList2D(array):
     averageResult = []
@@ -18,25 +15,16 @@ def averageForList2D(array):
         averageResult.append(statistics.mean(array[i]))
     return averageResult
 
-
 def averageForList1D(array):
     return statistics.mean(array)
 
-
-
-
-
-
+#MEDIAN
 def medianOfArray(array):
 
     if isinstance(array[0], list):
-        result = []
-        result = medianForList2D(array)
+        return medianForList2D(array)
     else:
-        result = 0
-        result = medianForList1D(array)
-    return result
-
+        return medianForList1D(array)
 
 def medianForList2D(array):
     medianResult = []

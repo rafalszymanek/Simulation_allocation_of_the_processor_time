@@ -1,4 +1,4 @@
-class Thread:
+class Process:
     waitingTime = 0
     processingTime = 0
     allocationOfProcessorTime = 0
@@ -15,7 +15,7 @@ class Thread:
         self.waitingTime += durationOfEndingProcess
         self.processingTime += durationOfEndingProcess
 
-    def putResultsToTable(self, listOfWaitingTime = [], listOfProcessingTime = [], *args):
-        listOfWaitingTime = self.waitingTime
-        listOfProcessingTime = self.processingTime
-        return listOfWaitingTime, listOfProcessingTime
+    def putResultsToTable(self, listOfAllWaitingTime = [], listOfAllProcessingTime = [], *args):
+        listOfAllWaitingTime = self.waitingTime
+        listOfAllProcessingTime = self.processingTime
+        return listOfAllWaitingTime, listOfAllProcessingTime
