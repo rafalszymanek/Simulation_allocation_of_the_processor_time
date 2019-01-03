@@ -34,3 +34,8 @@ def medianForList2D(array):
 
 def medianForList1D(array):
     return statistics.median(array)
+
+def test(listOfAllWaitingTime):
+    listAverageOfEachAttemptOfWaitingTime = averageOfArray(listOfAllWaitingTime)
+    listMedianOfEachAttemptOfWaitingTime = medianOfArray(listOfAllWaitingTime)
+    return averageOfArray(listAverageOfEachAttemptOfWaitingTime), medianOfArray(listMedianOfEachAttemptOfWaitingTime)

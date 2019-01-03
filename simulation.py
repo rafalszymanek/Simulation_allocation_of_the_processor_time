@@ -8,58 +8,48 @@ path = "data/test_values.txt"
 
 
 if __name__ == "__main__":
-    #OUR MAIN LISTS
-
     #Matrix is a 2D list
     matrix = openFileAndPutIntoMatrix(path)
 
-    #Do FCFS for every row in matrix
+    # Do FCFS
     listOfAllWaitingTime, listOfAllProcessingTime = fcfs(matrix)
 
+    # Waiting Time Statistic Stuff
+    averageValue, medianValue = test(listOfAllWaitingTime)
 
-
-    listAverageOfEachAttemptOfWaitingTime = averageOfArray(listOfAllWaitingTime)
-    averageOfAllAttemptOfWaitingTime = averageOfArray(listAverageOfEachAttemptOfWaitingTime)
-
-    listMedianOfEachAttemptOfWaitingTime = medianOfArray(listOfAllWaitingTime)
-    medianOfAllAttemptOfWaitingTime = medianOfArray(listMedianOfEachAttemptOfWaitingTime)
-
-    print("FCFS")
+    # Interface
+    print("\n---------------------\n\tFCFS\n---------------------")
     print("Waiting time: ")
-    print("Median = "+ str(medianOfAllAttemptOfWaitingTime) + " [ms]")
-    print("Mean = " + str(averageOfAllAttemptOfWaitingTime) + " [ms]")
+    print("Median = "+ str(medianValue) + " [ms]")
+    print("Mean = " + str(averageValue) + " [ms]")
 
-    listAverageOfEachAttemptOfProcessingTime = averageOfArray(listOfAllProcessingTime)
-    averageOfAllAttemptOfProcessigTime = averageOfArray(listAverageOfEachAttemptOfProcessingTime)
+    # Processing Time Statistic Stuff
+    averageValue, medianValue = test(listOfAllProcessingTime)
 
-    listMedianOfEachAttemptOfProcssingTime = medianOfArray(listOfAllProcessingTime)
-    medianOfAllAttemptOfProcessingTime = medianOfArray(listMedianOfEachAttemptOfProcssingTime)
     print("\nProcessing time: ")
-    print("Median = "+ str(medianOfAllAttemptOfProcessingTime) + " [ms]")
-    print("Mean = " + str(averageOfAllAttemptOfProcessigTime) + " [ms]")
+    print("Median = "+ str(medianValue) + " [ms]")
+    print("Mean = " + str(averageValue) + " [ms]")
 
     clearAllLists()
 
-
+    # Do SJF
     listOfAllWaitingTime, listOfAllProcessingTime = sjf(matrix)
-    listAverageOfEachAttemptOfWaitingTime = averageOfArray(listOfAllWaitingTime)
-    averageOfAllAttemptOfWaitingTime = averageOfArray(listAverageOfEachAttemptOfWaitingTime)
 
-    listMedianOfEachAttemptOfWaitingTime = medianOfArray(listOfAllWaitingTime)
-    medianOfAllAttemptOfWaitingTime = medianOfArray(listMedianOfEachAttemptOfWaitingTime)
+    # Waiting Time Statistic Stuff
+    averageValue, medianValue = test(listOfAllWaitingTime)
 
-    print("SJF")
+    # Interface
+    print("\n---------------------\n\tSJF\n---------------------")
     print("Waiting time: ")
-    print("Median = "+ str(medianOfAllAttemptOfWaitingTime) + " [ms]")
-    print("Mean = " + str(averageOfAllAttemptOfWaitingTime) + " [ms]")
+    print("Median = "+ str(medianValue) + " [ms]")
+    print("Mean = " + str(averageValue) + " [ms]")
 
-    listAverageOfEachAttemptOfProcessingTime = averageOfArray(listOfAllProcessingTime)
-    averageOfAllAttemptOfProcessigTime = averageOfArray(listAverageOfEachAttemptOfProcessingTime)
+    # Processing Time Statistic Stuff
+    averageValue, medianValue = test(listOfAllProcessingTime)
 
-    listMedianOfEachAttemptOfProcssingTime = medianOfArray(listOfAllProcessingTime)
-    medianOfAllAttemptOfProcessingTime = medianOfArray(listMedianOfEachAttemptOfProcssingTime)
+    # Interface
     print("\nProcessing time: ")
-    print("Median = "+ str(medianOfAllAttemptOfProcessingTime) + " [ms]")
-    print("Mean = " + str(averageOfAllAttemptOfProcessigTime) + " [ms]")
+    print("Median = "+ str(medianValue) + " [ms]")
+    print("Mean = " + str(averageValue) + " [ms]")
 
     clearAllLists()
