@@ -14,7 +14,7 @@ def algorythmExecution(listOfProcess, listOfAllWaitingTime, listOfAllProcessingT
 
     for actualExecProcess in listOfProcess:   # ececute process though FCFS queue
         actualExecProcess.executeProcess()
-        listOfAllWaitingTime[actualAttempt][i], listOfAllProcessingTime[actualAttempt][i] = actualExecProcess.putResultsToTable(listOfAllWaitingTime, listOfAllProcessingTime)
+        listOfAllWaitingTime[actualAttempt][i], listOfAllProcessingTime[actualAttempt][i] = actualExecProcess.putResultsToTable()
 
         # Do for other process then actual
         i += 1

@@ -25,5 +25,5 @@ def checkWidthAndHeightOfFile(path):
         height += 1
         width = len(ourList)
 
-    fileWithData.close()
+    fileWithData.close() # File automaticly close when we exit function
     return width, height

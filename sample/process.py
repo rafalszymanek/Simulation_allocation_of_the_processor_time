@@ -15,7 +15,5 @@ class Process:
         self.waitingTime += durationOfEndingProcess
         self.processingTime += durationOfEndingProcess
 
-    def putResultsToTable(self, listOfAllWaitingTime = [], listOfAllProcessingTime = [], *args):
-        listOfAllWaitingTime = self.waitingTime
-        listOfAllProcessingTime = self.processingTime
-        return listOfAllWaitingTime, listOfAllProcessingTime
+    def putResultsToTable(self):
+        return self.waitingTime, self.processingTime

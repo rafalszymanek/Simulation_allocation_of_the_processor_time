@@ -1,4 +1,3 @@
-from sample.fcsfalgorythm import *
 import statistics
 
 
@@ -35,7 +34,9 @@ def medianForList2D(array):
 def medianForList1D(array):
     return statistics.median(array)
 
-def arytythmeticStuff(listOfAllWaitingTime):
-    listAverageOfEachAttemptOfWaitingTime = averageOfArray(listOfAllWaitingTime)
-    listMedianOfEachAttemptOfWaitingTime = medianOfArray(listOfAllWaitingTime)
-    return averageOfArray(listAverageOfEachAttemptOfWaitingTime), medianOfArray(listMedianOfEachAttemptOfWaitingTime)
+
+
+def arytythmeticStuff(listOfTime):
+    listAverageOfEachAttemptTime = averageOfArray(listOfTime)
+    listMedianOfEachAttemptTime = medianOfArray(listOfTime)
+    return averageOfArray(listAverageOfEachAttemptTime), medianOfArray(listMedianOfEachAttemptTime)
