@@ -5,6 +5,7 @@ from sample.statistics import *
 from sample.globals import path
 
 if __name__ == "__main__":
+
     #Matrix is a 2D list
     matrix = openFileAndPutIntoMatrix(path)
 
@@ -13,19 +14,20 @@ if __name__ == "__main__":
 
     # Waiting Time Statistic Stuff
     averageValue, medianValue = arytythmeticStuff(listOfAllWaitingTime)
-
+    saveIntToFile(averageValue)
     # Interface
     print("\n---------------------\n\tFCFS\n---------------------")
     print("Waiting time: ")
-    print("Median = "+ str(medianValue) + " [ms]")
-    print("Mean = " + str(averageValue) + " [ms]")
+    print("Median = "+ str(medianValue) + " [s]")
+    print("Mean = " + str(averageValue) + " [s]")
 
     # Processing Time Statistic Stuff
     averageValue, medianValue = arytythmeticStuff(listOfAllProcessingTime)
 
+    saveIntToFile(averageValue)
     print("\nProcessing time: ")
-    print("Median = "+ str(medianValue) + " [ms]")
-    print("Mean = " + str(averageValue) + " [ms]")
+    print("Median = "+ str(medianValue) + " [s]")
+    print("Mean = " + str(averageValue) + " [s]")
 
     clearAllLists()
 
@@ -34,19 +36,19 @@ if __name__ == "__main__":
 
     # Waiting Time Statistic Stuff
     averageValue, medianValue = arytythmeticStuff(listOfAllWaitingTime)
-
+    saveIntToFile(averageValue)
     # Interface
     print("\n---------------------\n\tSJF\n---------------------")
     print("Waiting time: ")
-    print("Median = "+ str(medianValue) + " [ms]")
-    print("Mean = " + str(averageValue) + " [ms]")
+    print("Median = "+ str(medianValue) + " [s]")
+    print("Mean = " + str(averageValue) + " [s]")
 
     # Processing Time Statistic Stuff
     averageValue, medianValue = arytythmeticStuff(listOfAllProcessingTime)
-
+    saveIntToFile(averageValue)
     # Interface
     print("\nProcessing time: ")
-    print("Median = "+ str(medianValue) + " [ms]")
-    print("Mean = " + str(averageValue) + " [ms]")
+    print("Median = "+ str(medianValue) + " [s]")
+    print("Mean = " + str(averageValue) + " [s]")
 
     clearAllLists()

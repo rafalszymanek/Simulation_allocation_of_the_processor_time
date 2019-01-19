@@ -27,3 +27,21 @@ def checkWidthAndHeightOfFile(path):
 
     fileWithData.close() # File automaticly close when we exit function
     return width, height
+
+def saveToFile(listToSve):
+
+    file=open("data/result.txt", "a+")
+    for attempt in listToSve:
+        file.write(str(attempt) + "\n")
+
+    file.write("\n")
+    file.close()
+
+def saveIntToFile(toSave):
+
+    file=open("data/result.txt", "a+")
+
+    file.write(str(toSave) + "\n")
+
+    file.write("\n")
+    file.close()

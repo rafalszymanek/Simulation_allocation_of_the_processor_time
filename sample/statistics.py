@@ -1,4 +1,5 @@
 import statistics
+from sample.open_data import *
 
 
 #AVERAGE MEAN
@@ -38,5 +39,6 @@ def medianForList1D(array):
 
 def arytythmeticStuff(listOfTime):
     listAverageOfEachAttemptTime = averageOfArray(listOfTime)
+    saveToFile(listAverageOfEachAttemptTime)
     listMedianOfEachAttemptTime = medianOfArray(listOfTime)
     return averageOfArray(listAverageOfEachAttemptTime), medianOfArray(listMedianOfEachAttemptTime)
