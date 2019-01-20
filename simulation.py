@@ -5,7 +5,8 @@ from sample.statistics import *
 from sample.globals import path
 
 if __name__ == "__main__":
-
+    file=open("data/result.txt", "w+")
+    file.close()
     #Matrix is a 2D list
     matrix = openFileAndPutIntoMatrix(path)
 

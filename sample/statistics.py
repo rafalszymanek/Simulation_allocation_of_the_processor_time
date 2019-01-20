@@ -39,6 +39,6 @@ def medianForList1D(array):
 
 def arytythmeticStuff(listOfTime):
     listAverageOfEachAttemptTime = averageOfArray(listOfTime)
-    saveToFile(listAverageOfEachAttemptTime)
+    saveListToFile(listAverageOfEachAttemptTime)
     listMedianOfEachAttemptTime = medianOfArray(listOfTime)
     return averageOfArray(listAverageOfEachAttemptTime), medianOfArray(listMedianOfEachAttemptTime)
